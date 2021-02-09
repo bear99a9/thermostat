@@ -12,4 +12,8 @@ class Thermostat {
   increaseTemp() {
     ++this._temperature;
   }
+
+  decreaseTemp() {
+    --this._temperature;
+  }
 }
