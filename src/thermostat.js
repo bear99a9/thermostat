@@ -4,6 +4,7 @@ class Thermostat {
   constructor() {
     this._temperature = 20;
     this._MIN_TEMP = 10;
+    this._SAVING_MAX_TEMP = 25;
   }
 
   currentTemp() {
@@ -11,6 +12,10 @@ class Thermostat {
   }
 
   increaseTemp() {
+    if (this.isMaxTemp()) {
+      return;
+    }
+
     ++this._temperature;
   }
 
@@ -24,5 +29,13 @@ class Thermostat {
 
   isMinTemp() {
     return this._temperature === this._MIN_TEMP;
+  }
+
+  isMaxTemp() {
+    return this._temperature === this._SAVING_MAX_TEMP;
+  }
+
+  powerSavingOn() {
+    true;
   }
 }
