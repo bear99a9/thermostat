@@ -76,4 +76,16 @@ describe('Thermostat', function () {
   it('has a power saving mode that is on by default', function () {
     expect(thermostat._powerSavingMode).toBe(true);
   });
+
+  // * You can reset the temperature to 20 with a reset function
+  it('has a rest function that return the temp to 20', function () {
+    for (var i = 0; i < 10; i++) {
+      thermostat.decreaseTemp();
+    }
+
+    expect(thermostat.currentTemp()).toEqual(10);
+    thermostat.reset();
+    expect(thermostat.currentTemp()).toEqual(20);
+
+  });
 });
