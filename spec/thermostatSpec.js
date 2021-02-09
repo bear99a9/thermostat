@@ -38,11 +38,34 @@ describe('Thermostat', function () {
   });
 
   // * If power saving mode is on, the maximum temperature is 25 degrees
-  it('has a power saving mode that sets max temp to 25 degrees', function () {
+  it('has a power saving mode that sets the default max temp to 25 degrees', function () {
     for (var i = 0; i < 6; i++) {
       thermostat.increaseTemp();
     }
 
     expect(thermostat.currentTemp()).toBe(25);
   });
+
+  // * If power saving mode is off, the maximum temperature is 32 degrees
+  // * Power saving mode is on by default but it can also be turned off
+  it('when power saving mode is off max temp is 32 degrees', function () {
+    thermostat.powerSavingOff();
+    for (var i = 0; i < 16; i++) {
+      thermostat.increaseTemp();
+    }
+
+    expect(thermostat.currentTemp()).toEqual(32);
+
+  });
+
+  it('power saving mode can be switched on/off and reset to 20 degrees', function () {
+    thermostat.powerSavingOff();
+    for (var i = 0; i < 15; i++) {
+      thermostat.increaseTemp();
+    }
+
+    thermostat.powerSavingOn();
+    expect(thermostat.currentTemp()).toBe(20);
+  });
+
 });
