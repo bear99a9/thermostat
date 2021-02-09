@@ -50,5 +50,4 @@ class Thermostat {
     this._powerSavingMode = true;
     this._temperature = 20;
   }
-
 }
