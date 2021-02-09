@@ -2,11 +2,14 @@
 
 class Thermostat {
   constructor() {
-    this._temperature = 20;
+    this._DEFAULT_TEMP = 20;
+    this._temperature = this._DEFAULT_TEMP;
     this._MIN_TEMP = 10;
     this._SAVING_MAX_TEMP = 25;
     this._MAX_TEMP = 32;
     this._powerSavingMode = true;
+    this._MEDIUM_ENERGY_USAGE = 18;
+    this._HIGH_ENERGY_USAGE = 25;
   }
 
   currentTemp() {
@@ -52,6 +55,18 @@ class Thermostat {
   }
 
   reset() {
-    this._temperature = 20;
+    this._temperature = this._DEFAULT_TEMP;
+  }
+
+  energyUsage() {
+    if (this._temperature < this._MEDIUM_ENERGY_USAGE) {
+      return 'Low-usage';
+    }
+
+    if (this._temperature  <= this._HIGH_ENERGY_USAGE) {
+      return 'Medium-usage';
+    }
+
+    return 'High-usage';
   }
 }
