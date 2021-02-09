@@ -6,7 +6,11 @@ class Thermostat {
   }
 
   currentTemp() {
-    return this._temperature;
+    if (this._temperature >= 10) {
+      return this._temperature;
+    }else {
+      return 10;
+    }
   }
 
   increaseTemp() {

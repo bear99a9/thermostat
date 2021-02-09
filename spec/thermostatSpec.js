@@ -29,5 +29,11 @@ describe('Thermostat', function () {
   });
 
   // * The minimum temperature is 10 degrees
+  it('has a minimum temperature of 10 degrees', function () {
+    for (var i = 0; i < 11; i++) {
+      thermostat.decreaseTemp();
+    }
 
+    expect(thermostat.currentTemp()).toBe(10);
+  });
 });
