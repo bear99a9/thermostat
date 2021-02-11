@@ -18,20 +18,20 @@ describe('Thermostat', function () {
 
   // * You can increase the temperature with an up function
   it('can increase the temperature with an increase fucntion', function () {
-    thermostat.increaseTemp();
+    thermostat.up();
     expect(thermostat.currentTemp()).toEqual(21);
   });
 
   // * You can decrease the temperature with a down function
   it('can decrease the temperature with a decrease function', function () {
-    thermostat.decreaseTemp();
+    thermostat.down();
     expect(thermostat.currentTemp()).toEqual(19);
   });
 
   // * The minimum temperature is 10 degrees
   it('has a minimum temperature of 10 degrees', function () {
     for (var i = 0; i < 11; i++) {
-      thermostat.decreaseTemp();
+      thermostat.down();
     }
 
     expect(thermostat.currentTemp()).toBe(10);
@@ -40,7 +40,7 @@ describe('Thermostat', function () {
   // * If power saving mode is on, the maximum temperature is 25 degrees
   it('has a power saving mode that sets the max temp to 25 degrees', function () {
     for (var i = 0; i < 6; i++) {
-      thermostat.increaseTemp();
+      thermostat.up();
     }
 
     expect(thermostat._powerSavingMode).toBe(true);
@@ -53,7 +53,7 @@ describe('Thermostat', function () {
     thermostat.powerSavingOff();
     expect(thermostat._powerSavingMode).toBe(false);
     for (var i = 0; i < 13; i++) {
-      thermostat.increaseTemp();
+      thermostat.up();
     }
 
     expect(thermostat.currentTemp()).toEqual(32);
@@ -63,7 +63,7 @@ describe('Thermostat', function () {
     thermostat.powerSavingOff();
     expect(thermostat._powerSavingMode).toBe(false);
     for (var i = 0; i < 12; i++) {
-      thermostat.increaseTemp();
+      thermostat.up();
     }
 
     expect(thermostat.currentTemp()).toEqual(32);
@@ -80,7 +80,7 @@ describe('Thermostat', function () {
   // * You can reset the temperature to 20 with a reset function
   it('has a rest function that return the temp to 20', function () {
     for (var i = 0; i < 10; i++) {
-      thermostat.decreaseTemp();
+      thermostat.down();
     }
 
     expect(thermostat.currentTemp()).toEqual(10);
@@ -93,23 +93,23 @@ describe('Thermostat', function () {
   describe('it displays the energy usage', function () {
     it('it displays low-usage when temp < 18', function () {
       for (var i = 0; i < 3; i++) {
-        thermostat.decreaseTemp();
+        thermostat.down();
       }
 
-      expect(thermostat.energyUsage()).toEqual('Low-usage');
+      expect(thermostat.energyUsage()).toEqual('Low');
     });
 
     it('it displays medium-usage when temp => 18 && <= 25', function () {
-      expect(thermostat.energyUsage()).toEqual('Medium-usage');
+      expect(thermostat.energyUsage()).toEqual('Medium');
     });
 
     it('it displays high-usage is temp >25', function () {
       thermostat.powerSavingOff();
       for (var i = 0; i < 10; i++) {
-        thermostat.increaseTemp();
+        thermostat.up();
       }
 
-      expect(thermostat.energyUsage()).toEqual('High-usage');
+      expect(thermostat.energyUsage()).toEqual('High');
     });
   });
 });

@@ -3,12 +3,12 @@ $(document).ready(function () {
     updateTemperature();
 
     $('#up').click(function () {
-      thermostat.increaseTemp();
+      thermostat.up();
       updateTemperature();
     });
 
     $('#down').click(function () {
-      thermostat.decreaseTemp();
+      thermostat.down();
       updateTemperature();
     });
 

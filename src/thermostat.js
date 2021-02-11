@@ -16,7 +16,7 @@ class Thermostat {
     return this._temperature;
   }
 
-  increaseTemp() {
+  up() {
     if (this.isMaxTemp()) {
       return;
     }
@@ -24,7 +24,7 @@ class Thermostat {
     ++this._temperature;
   }
 
-  decreaseTemp() {
+  down() {
     if (this.isMinTemp()) {
       return;
     }
