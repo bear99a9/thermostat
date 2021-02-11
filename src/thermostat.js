@@ -5,8 +5,8 @@ class Thermostat {
     this._DEFAULT_TEMP = 20;
     this._temperature = this._DEFAULT_TEMP;
     this._MIN_TEMP = 10;
-    this._SAVING_MAX_TEMP = 25;
     this._MAX_TEMP = 32;
+    this._SAVING_MAX_TEMP = 25;
     this._powerSavingMode = true;
     this._MEDIUM_ENERGY_USAGE = 18;
     this._HIGH_ENERGY_USAGE = 25;
@@ -60,13 +60,13 @@ class Thermostat {
 
   energyUsage() {
     if (this._temperature < this._MEDIUM_ENERGY_USAGE) {
-      return 'Low-usage';
+      return 'Low';
     }
 
     if (this._temperature  <= this._HIGH_ENERGY_USAGE) {
-      return 'Medium-usage';
+      return 'Medium';
     }
 
-    return 'High-usage';
+    return 'High';
   }
 }
