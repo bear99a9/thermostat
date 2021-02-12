@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <section>
+  <section id='location-weather'>
     <h1> <span id="location"> </span> <span id="current-temperature"> </span> °c </h1>
     <form id="select-city">
       <input id="current-city" type="text" placeholder="Enter a city"></input>
@@ -18,25 +18,29 @@
   </section>
 
   <section>
-    <h1> <span id="temperature"> </span> °c </h1>
-    <p>
-      Power usage is <span id="power-usage"></span>
-    </p>
-    <p>
-      Power saving mode is <span id="power-saving-mode">On</span>
-    </p>
-    <p>
-      <button id="up">+</button>
-      <button id="down">-</button>
-    </p>
-    <p>
-      <button id="temperature-reset">reset</button>
-    </p>
-    <p>
-      <button id="power-saving-on">Power saving on</button>
-      <button id="power-saving-off">Power saving off</button>
-    </p>
+    <div id='thermostat-temperature'>
+      <h1> <span id="temperature"> </span> °c </h1>
+      <p>
+        Power usage is <span id="power-usage"></span>
+      </p>
+      <p>
+        Power saving mode is <span id="power-saving-mode">On</span>
+      </p>
+  </div>
 
+    <div id='thermostat-buttons'>
+      <p>
+        <button id="up">+</button>
+        <button id="down">-</button>
+      </p>
+      <p>
+        <button id="temperature-reset">reset</button>
+      </p>
+      <p>
+        <button id="power-saving-on">Power saving on</button>
+        <button id="power-saving-off">Power saving off</button>
+      </p>
+  </div>
   </section>
 </body>
 
