@@ -28,8 +28,19 @@ $(document).ready(function () {
         $('#power-saving-mode').text('off');
       });
 
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=a8a9d855f19ccd6a35cc2c6bf8328d89&units=metric', function (data) {
+        $('#current-temperature').text(data.main.temp);
+      });
+
+    $('current-city').change(function () {
+      let city = $('#current-city').val();
+      $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a8a9d855f19ccd6a35cc2c6bf8328d89&units=metric', function (data) {
+        $('#current-city').text(data.main.tmep);
+      });
+    });
+
     function updateTemperature() {
-      $('#current-temperature').text(thermostat.currentTemp());
+      $('#temperature').text(thermostat.currentTemp());
       $('#power-usage').text(thermostat.energyUsage());
       $('#power-usage').attr('class', thermostat.energyUsage());
     }
