@@ -1,0 +1,128 @@
+
+/*! drop-in.css v2.1 | MIT License | github.com/webdevjeffus/drop-in-css */
+
+/* drop-in.css v2.0+ is compatible with griddy.css v1.0+ */
+/* griddy.css - a lightweight, responsive 12-column grid system */
+/* github/webdevjeffus/griddy */
+
+/* IMPORT COMMANDS ***************************************************/
+
+/* normalize.css */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css);
+
+/* Google Fonts - Replace to change fonts in theme */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Alegreya:700);
+
+
+/* RESET STYLES ******************************************************\
+\* Do not edit when customizing themes *******************************/
+
+/* Reset from http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+
+/* drop-in.css */
+
+/* RESETS */
+
+html { box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 600px;
+  max-width: 800px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0.5rem;
+}
+
+
+/* DESIGN STYLES */
+
+/* Fonts */
+
+html { font-family: 'Press Start 2P', cursive; }
+
+h1, h3, h4 {
+  font-family: 'Bungee Shade', cursive;
+  font-weight: bold;
+  font-size: 70px;
+}
+
+h2 { font-family: 'Londrina Shadow', cursive; }
+
+/* Colors */
+
+html {
+  background-color: #222;   /* dark gray */
+  color: #ddd;              /* dark gray */
+}
+
+body,
+h1 {
+  background-color: #222;    /* dark gray */
+  color: #ff0074      /* street fighter pink */
+}
+
+h2 {
+  background-color: #222;    /* dark gray */
+  color: #ff0074      /* street fighter light pink */
+}
+
+section {
+  background-color: #222;   /* dark gray */
+  color: #ff8100;              /* street fighter orange */
+}
+
+p {
+  font-size: 30px;
+}
+
+input {
+  background-color: #222;
+  color: #ffe700;              /* street fighter yellow */
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+button {
+  background-color: #222;
+  color: #ffe700;              /* street fighter yellow */
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.Low {
+  color: green;
+  font-weight: bolder;
+}
+
+.Medium {
+  color: orange;
+  font-weight: bolder;
+
+}
+
+.High {
+  color: red;
+  font-weight: bolder;
+}
